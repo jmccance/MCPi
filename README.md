@@ -2,7 +2,15 @@
 
 ## Overview
 
-This app visualizes a Monte Carlo algorithm for calculating π.
+This app visualizes a Monte Carlo algorithm for calculating π. When run, you'll
+see lots of dots drawn onto a square that has a circle inscribed in it. Dots
+inside the circle are one color, while dots outside the circle are another. The
+ratio of circle dots to square dots is used to calculate an approximation of π.
+The red circle shows how big the white circle would be if you had drawn it using
+the current approximation of π, which is shown in the middle of the
+visualization.
+
+### Technical Details
 
 The algorithm works by approximating the ratio of the area of a unit square and
 a circle inscribed inside that square. Note that if *C* is the area of the
@@ -33,3 +41,16 @@ the area of that shape, the ratio of the number of points inside the circle to
 the total number of points will be approximately *C*/*S*. The more points we
 generate, the closer we'll get to *C*/*S* and the more accurate our final
 estimate will be.
+
+# TODO
+
+## Points
+
+The current approach to passing points around is pretty ugly. Having a
+separation between screen points and "real" points makes sense, but the current
+proliferation of `Point2D` and `PiPoint` is just silly.
+
+## Configuration
+
+There's some low-hanging fruit to be picked in to allow easy setting of FPS and
+window size.
