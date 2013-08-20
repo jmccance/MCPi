@@ -1,6 +1,10 @@
 package jmccance.mcpi.view;
 
+import jmccance.mcpi.model.PiFinder;
+
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Description.
@@ -10,9 +14,15 @@ import javax.swing.*;
  */
 public class MCPiWindow extends JFrame {
 
-  public MCPiWindow() {
-    final MCPanel content = new MCPanel();
-    this.setContentPane(content);
+  private static final double FPS = 120;
+  private final VisualizationPanel _visPanel;
+  private final PiFinder _piFinder;
+
+  public MCPiWindow(final PiFinder piFinder) {
+    _visPanel = new VisualizationPanel(800);
+    _piFinder = piFinder;
+
+    this.setContentPane(_visPanel);
     this.pack();
 
     this.setTitle("MCPi");
@@ -21,6 +31,16 @@ public class MCPiWindow extends JFrame {
     this.setLocationRelativeTo(null);
     // Resizing is not yet supported due to reasons.
     this.setResizable(false);
+
+    final Timer timer = new Timer((int) Math.round(1000 / FPS),
+        new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            _visPanel.addPoint(_piFinder.refine());
+            _visPanel.setPi(_piFinder.getApprox());
+            _visPanel.repaint();
+          }
+        });
+    timer.start();
   }
 
 }

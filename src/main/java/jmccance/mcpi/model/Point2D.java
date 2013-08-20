@@ -6,11 +6,11 @@ package jmccance.mcpi.model;
  * @author jmccance
  * @since 8/20/13
  */
-public class Point {
+public class Point2D {
 
   public final double x, y;
 
-  public Point(final double x, final double y) {
+  public Point2D(final double x, final double y) {
     this.x = x;
     this.y = y;
   }

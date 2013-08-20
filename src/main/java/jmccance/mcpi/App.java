@@ -1,6 +1,7 @@
 package jmccance.mcpi;
 
 import jmccance.mcpi.model.PiFinder;
+import jmccance.mcpi.view.MCPiWindow;
 
 /**
  * Hello world!
@@ -11,7 +12,7 @@ public class App {
   private static final String MODE_PROP = "mode";
   private static final String CONSOLE_MODE_STR = "console";
   private static final String SWING_MODE_STR = "swing";
-  private static final String DEFAULT_MODE_STR = CONSOLE_MODE_STR;
+  private static final String DEFAULT_MODE_STR = SWING_MODE_STR;
 
   private static enum AppMode {
     CONSOLE,
@@ -43,7 +44,8 @@ public class App {
   }
 
   private static void swingApp() {
-
+    final MCPiWindow win = new MCPiWindow(new PiFinder());
+    win.setVisible(true);
   }
 
   private static AppMode getAppMode() {

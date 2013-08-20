@@ -16,8 +16,8 @@ public class PointProducer {
   // We may also want to implement Iterator or Iterable, since that's basically
   // what this is and that might allow some nice tricks.
 
-  private final Point _lowerLeftPt;
-  private final Point _upperRightPt;
+  private final Point2D _lowerLeftPt;
+  private final Point2D _upperRightPt;
 
   private final SecureRandom _gen = new SecureRandom();
 
@@ -28,7 +28,7 @@ public class PointProducer {
    * @param lowerLeftPt the lower-left bound
    * @param upperRightPt the upper-right bound
    */
-  public PointProducer(final Point lowerLeftPt, final Point upperRightPt) {
+  public PointProducer(final Point2D lowerLeftPt, final Point2D upperRightPt) {
     _lowerLeftPt = lowerLeftPt;
     _upperRightPt = upperRightPt;
   }
@@ -36,8 +36,8 @@ public class PointProducer {
   /**
    * @return a random
    */
-  public Point next() {
-    return new Point(this.getRandomXCoord(), this.getRandomYCoord());
+  public Point2D next() {
+    return new Point2D(this.getRandomXCoord(), this.getRandomYCoord());
   }
 
   private double getRandomXCoord() {

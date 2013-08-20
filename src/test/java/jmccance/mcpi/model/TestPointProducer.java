@@ -16,12 +16,12 @@ public class TestPointProducer {
 
   @Test
   public void pointProducerShouldProducePointsWithinBounds() {
-    final Point lowerLeftPt = new Point(-10.0, -10.0);
-    final Point upperRightPt = new Point(10.0, 10.0);
+    final Point2D lowerLeftPt = new Point2D(-10.0, -10.0);
+    final Point2D upperRightPt = new Point2D(10.0, 10.0);
     final PointProducer pp = new PointProducer(lowerLeftPt, upperRightPt);
 
     for (int i = 0; i < 100; ++i) {
-      final Point pt = pp.next();
+      final Point2D pt = pp.next();
       assertTrue(
           pt.x >= lowerLeftPt.x && pt.x <= upperRightPt.x
               && pt.y >= lowerLeftPt.y && pt.y <= upperRightPt.y,
