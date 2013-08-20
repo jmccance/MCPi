@@ -11,7 +11,7 @@ public class App {
   private static final String MODE_PROP = "mode";
   private static final String CONSOLE_MODE_STR = "console";
   private static final String SWING_MODE_STR = "swing";
-  private static final String DEFAULT_MODE_STR = SWING_MODE_STR;
+  private static final String DEFAULT_MODE_STR = CONSOLE_MODE_STR;
 
   private static enum AppMode {
     CONSOLE,
