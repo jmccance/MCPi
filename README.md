@@ -10,6 +10,14 @@ The red circle shows how big the white circle would be if you had drawn it using
 the current approximation of π, which is shown in the middle of the
 visualization.
 
+### Building
+
+MCPi is built with Maven. To build and run, use:
+
+    mvn clean package
+    cd target
+    java -jar mcpi-1.0-SNAPSHOT.jar
+
 ### Technical Details
 
 The algorithm works by approximating the ratio of the area of a unit square and
@@ -42,15 +50,15 @@ the total number of points will be approximately *C*/*S*. The more points we
 generate, the closer we'll get to *C*/*S* and the more accurate our final
 estimate will be.
 
-# TODO
+## TODO
 
-## Points
+### Points
 
 The current approach to passing points around is pretty ugly. Having a
 separation between screen points and "real" points makes sense, but the current
 proliferation of `Point2D` and `PiPoint` is just silly.
 
-## Configuration
+### Configuration
 
 There's some low-hanging fruit to be picked in to allow easy setting of FPS and
 window size.
