@@ -1,4 +1,4 @@
-package jmccance.model;
+package jmccance.mcpi.model;
 
 /**
  * Generates an iterative, Monte Carlo approximation of pi.

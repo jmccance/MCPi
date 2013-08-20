@@ -1,4 +1,4 @@
-package jmccance.model;
+package jmccance.mcpi.model;
 
 /**
  * Stores a two-dimensional, real-valued point in space.

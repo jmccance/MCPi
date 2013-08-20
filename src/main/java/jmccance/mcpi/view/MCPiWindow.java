@@ -1,4 +1,4 @@
-package jmccance.view;
+package jmccance.mcpi.view;
 
 import javax.swing.*;
 

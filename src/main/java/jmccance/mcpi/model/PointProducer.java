@@ -1,4 +1,4 @@
-package jmccance.model;
+package jmccance.mcpi.model;
 
 import java.security.SecureRandom;
 
