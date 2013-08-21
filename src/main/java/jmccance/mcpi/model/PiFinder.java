@@ -11,6 +11,8 @@ public class PiFinder {
   /** The radius of the unit circle. */
   private static final double R = 0.5;
 
+  private static final Point2D ORIGIN = new Point2D(0, 0);
+
   public static class PiPoint extends Point2D {
     public final boolean isInCircle;
 
@@ -48,7 +50,7 @@ public class PiFinder {
   }
 
   private static boolean isInCircle(final Point2D pt) {
-    return Math.sqrt(pt.x * pt.x + pt.y * pt.y) <= R;
+    return pt.distanceFrom(ORIGIN) <= R;
   }
 
 }
