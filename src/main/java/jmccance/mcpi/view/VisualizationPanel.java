@@ -53,6 +53,11 @@ public class VisualizationPanel extends JPanel {
 
   @Override
   public void paintComponent(final Graphics g) {
+    final Graphics2D g2d = (Graphics2D) g;
+    g2d.setRenderingHint(
+        RenderingHints.KEY_ANTIALIASING,
+        RenderingHints.VALUE_ANTIALIAS_ON);
+
     super.paintComponent(g);
 
     // Render the points generated thus far.
