@@ -7,14 +7,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Description.
+ * Serves the role of controller, feeding PiFinder output into the visualization
+ * panel.
  *
  * @author jmccance
  * @since 8/20/13
  */
 public class MCPiWindow extends JFrame {
 
-  private static final double FPS = 120;
+  private static final double FPS = 24;
   private final VisualizationPanel _visPanel;
   private final PiFinder _piFinder;
 
